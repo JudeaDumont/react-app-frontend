@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 export default function Card() {
+    const [count, setCount] = useState(0);
     return (
         <div>
             <img
@@ -8,7 +11,15 @@ export default function Card() {
             ></img>
             <div>
                 <p>chef</p>
-
+                <p>{count}</p>
+                <button
+                    onClick={() => setCount(count + 1)}>
+                    COOK
+                </button>
+                <input type="text"
+                    onChange={
+                        (e) => console.log(e.target.value)
+                    }></input>
             </div>
         </div>
     )
