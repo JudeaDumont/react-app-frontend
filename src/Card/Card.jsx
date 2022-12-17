@@ -19,7 +19,7 @@ export default function Card() {
             ></img>
             <div>
                 <p>chef</p>
-                <p>{count}</p>
+                <p id="count">{count}</p>
                 <button
                 id="count-btn"
                     onClick={onCountCLick}>
@@ -29,7 +29,7 @@ export default function Card() {
                     onChange={
                         (e) => console.log(e.target.value)
                     }></input>
-                <p>{toggle ? "true" : "false"}</p>
+                <p id="toggle">{toggle ? "true" : "false"}</p>
                 <button
                 id="toggle-btn"
                     onClick={onToggleCLick}>
