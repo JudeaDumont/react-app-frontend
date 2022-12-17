@@ -2,6 +2,14 @@ import { useState } from "react";
 
 export default function Card() {
     const [count, setCount] = useState(0);
+    const [toggle, setToggle] = useState(false);
+    const onCountCLick = () => {
+        setCount(count + 1);
+    }
+    const onToggleCLick = () => {
+        setToggle(!toggle);
+    }
+
     return (
         <div>
             <img
@@ -13,13 +21,20 @@ export default function Card() {
                 <p>chef</p>
                 <p>{count}</p>
                 <button
-                    onClick={() => setCount(count + 1)}>
-                    COOK
+                id="count-btn"
+                    onClick={onCountCLick}>
+                    Count
                 </button>
                 <input type="text"
                     onChange={
                         (e) => console.log(e.target.value)
                     }></input>
+                <p>{toggle ? "true" : "false"}</p>
+                <button
+                id="toggle-btn"
+                    onClick={onToggleCLick}>
+                    Toggle
+                </button>
             </div>
         </div>
     )
